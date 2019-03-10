@@ -1,5 +1,5 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import {MapLayerProviderOptions, MapsManagerService} from 'angular-cesium';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MapLayerProviderOptions, MapsManagerService, ViewerConfiguration} from 'angular-cesium';
 
 @Component({
   selector: 'app-map-provider',
@@ -11,13 +11,20 @@ export class MapProviderComponent implements OnInit, OnDestroy {
   mapLayerProviderOptions = MapLayerProviderOptions;
 
   providerOptions = {
-    // url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer',
-    // DEFAULT_VIEW_FACTOR: 0,
-    // baseLayerPicker: false
     url: 'https://dev.virtualearth.net',
     key: 'AmJ0O28GqMP3Dh1xqajFAFMuKb9f0YCXtGWJ5G4NU_PeE899SYup3ngALmDschnu',
     DEFAULT_VIEW_FACTOR: 0,
     baseLayerPicker: false
+  };
+
+  viewerConfigurationOptions = {
+    skyBox: false,
+    skyAtmosphere: false,
+    contextOptions: {
+      webgl: {
+        alpha: true
+      }
+    }
   };
 
   rectangleOptions2 = {
@@ -29,8 +36,9 @@ export class MapProviderComponent implements OnInit, OnDestroy {
 
   currentRectangle = this.setrectangle(this.rectangleOptions2);
 
-  constructor(private mapsManagerService: MapsManagerService) {
+  constructor(private mapsManagerService: MapsManagerService, viewerConfiguration: ViewerConfiguration) {
     this.mapsManagerService = mapsManagerService;
+    viewerConfiguration.viewerOptions = this.viewerConfigurationOptions;
     this.viewer = window.setTimeout(this.goToArea.bind(this), 3);
   }
 

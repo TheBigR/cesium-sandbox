@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {AngularCesiumModule, AngularCesiumWidgetsModule} from 'angular-cesium';
+import {AngularCesiumModule, AngularCesiumWidgetsModule, ViewerConfiguration} from 'angular-cesium';
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
 import { MapProviderComponent } from './components/map-provider/map-provider.component';
@@ -16,7 +16,9 @@ import { MapProviderComponent } from './components/map-provider/map-provider.com
     AngularCesiumWidgetsModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    ViewerConfiguration
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

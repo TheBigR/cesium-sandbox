@@ -9,6 +9,5 @@ if (environment.production) {
 }
 
 window['CESIUM_BASE_URL'] = './assets/cesium';
- // Cesium.buildModuleUrl.setBaseUrl('/assets/cesium/');
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
