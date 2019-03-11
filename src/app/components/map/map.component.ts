@@ -56,4 +56,9 @@ export class MapComponent implements OnInit, OnDestroy {
     console.log('MapComponent: ngOnDestroy');
   }
 
+  changeMapParams(mapname) {
+    this.viewer  = this.mapsManagerService.getMap(mapname).getCesiumViewer();
+    this.viewer.timeline.destroy();
+  }
+
 }
