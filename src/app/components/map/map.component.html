@@ -1,3 +1,4 @@
-<ac-map>
-  <app-map-provider></app-map-provider>
+<ac-map *ngFor="let map of maps;" [mapId]="map.id" [containerId]="map.containerId" >
+  <ac-map-layer-provider [options]="providerOptions" [provider]="mapLayerProviderOptions.BingMaps">
+  </ac-map-layer-provider>
 </ac-map>
