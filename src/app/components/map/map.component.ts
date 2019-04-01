@@ -34,8 +34,9 @@ export class MapComponent implements OnInit, OnDestroy {
   };
 
   maps = [
-    {id: 'transMap',
-     containerId: 'topOfVideo'
+    {
+      id: 'transMap',
+      containerId: 'topOfVideo'
     },
     {
       id: 'secMap',
