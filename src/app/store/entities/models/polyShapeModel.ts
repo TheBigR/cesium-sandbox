@@ -3,4 +3,5 @@ export interface PolyShape {
   location: {lat: number, long: number};
   description: string;
   showOnMap: boolean;
+  dispatched: number;
 }
