@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {AfterViewInit, Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {MapLayerProviderOptions, MapsManagerService, ViewerConfiguration} from 'angular-cesium';
 
 @Component({
@@ -8,7 +8,7 @@ import {MapLayerProviderOptions, MapsManagerService, ViewerConfiguration} from '
   encapsulation: ViewEncapsulation.None
 })
 
-export class MapComponent implements OnInit, OnDestroy {
+export class MapComponent implements OnInit, OnDestroy, AfterViewInit {
   viewer;
   mapLayerProviderOptions = MapLayerProviderOptions;
 
@@ -50,6 +50,9 @@ export class MapComponent implements OnInit, OnDestroy {
     Cesium.Ion.defaultAccessToken = this.ionToken;
   }
 
+  ngAfterViewInit() {
+    document.getElementById('demo').innerHTML = 'sample floating label';
+  }
 
   ngOnInit() { }
 
