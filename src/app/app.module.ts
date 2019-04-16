@@ -4,11 +4,13 @@ import {AngularCesiumModule, AngularCesiumWidgetsModule, ViewerConfiguration} fr
 import { AppComponent } from './app.component';
 import { MapComponent } from './components/map/map.component';
 import {FormsModule} from '@angular/forms';
+import { MapToolbarComponent } from './components/map/map-toolbar/map-toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    MapComponent,
+    MapToolbarComponent
   ],
   imports: [
     AngularCesiumModule,
