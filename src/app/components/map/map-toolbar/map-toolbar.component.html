@@ -1,3 +1,18 @@
-<p>
-  map-toolbar works!
-</p>
+<ac-toolbar [allowDrag]="false">
+  <ac-toolbar-button matTooltip="Draw Circle" matTooltipPosition="right"
+                     [iconUrl]="'assets/circle.svg'"
+                     (onClick)="drawCircle()">
+  </ac-toolbar-button>
+  <ac-toolbar-button matTooltip="Draw Ellipse" matTooltipPosition="right"
+                     [iconUrl]="'assets/ellipse.svg'"
+                     (onClick)="drawEllipse()">
+  </ac-toolbar-button>
+  <ac-toolbar-button matTooltip="Draw Polygon" matTooltipPosition="right"
+                     [iconUrl]="'assets/polygon.svg'"
+                     (onClick)="drawPolygon()">
+  </ac-toolbar-button>
+  <circles-editor></circles-editor>
+  <ellipses-editor></ellipses-editor>
+  <polygons-editor></polygons-editor>
+  <hippodrome-editor></hippodrome-editor>
+</ac-toolbar>
