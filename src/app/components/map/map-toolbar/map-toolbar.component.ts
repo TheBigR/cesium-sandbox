@@ -1,32 +1,25 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
-  CameraService,
   CesiumService,
   CirclesEditorService,
   EllipsesEditorService,
-  HippodromeEditorService,
-  PolygonsEditorService,
-  PolylineEditorObservable,
-  RangeAndBearingComponent,
-  ZoomToRectangleService
+  PolygonsEditorService
 } from 'angular-cesium';
 
 @Component({
   selector: 'app-map-toolbar',
   templateUrl: './map-toolbar.component.html',
   styleUrls: ['./map-toolbar.component.css'],
-  providers: [ZoomToRectangleService, CirclesEditorService, EllipsesEditorService, PolygonsEditorService, HippodromeEditorService],
+  providers: [CirclesEditorService, EllipsesEditorService, PolygonsEditorService],
 })
 export class MapToolbarComponent implements OnInit {
 
-  constructor( private cameraService: CameraService,
-               private zoomToRectangleService: ZoomToRectangleService,
-               private cesiumService: CesiumService,
+  constructor( private cesiumService: CesiumService,
                private circlesEditor: CirclesEditorService,
                private ellipsesEditor: EllipsesEditorService,
                private polygonsEditor: PolygonsEditorService,
   ) {
-    this.zoomToRectangleService.init(cesiumService, cameraService);
+
   }
 
   ngOnInit() {
