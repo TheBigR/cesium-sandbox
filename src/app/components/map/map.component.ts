@@ -61,8 +61,13 @@ export class MapComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   changeMapParams(mapname) {
-    this.viewer  = this.mapsManagerService.getMap(mapname).getCesiumViewer();
-    this.viewer.timeline.destroy();
+    const curViewer  = this.mapsManagerService.getMap(mapname).getCesiumViewer();
+    curViewer.timeline.destroy();
+  }
+
+  logViewerParams(mapName) {
+    const curViewer  = this.mapsManagerService.getMap(mapName).getCesiumViewer();
+    console.log('current viewer: ', curViewer.entities);
   }
 
 }

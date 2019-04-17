@@ -3,14 +3,14 @@ import {
   CesiumService,
   CirclesEditorService,
   EllipsesEditorService,
-  PolygonsEditorService
+  PolygonsEditorService, PolylinesEditorService
 } from 'angular-cesium';
 
 @Component({
   selector: 'app-map-toolbar',
   templateUrl: './map-toolbar.component.html',
   styleUrls: ['./map-toolbar.component.css'],
-  providers: [CirclesEditorService, EllipsesEditorService, PolygonsEditorService],
+  providers: [CirclesEditorService, EllipsesEditorService, PolygonsEditorService, PolylinesEditorService],
 })
 export class MapToolbarComponent implements OnInit {
 
@@ -18,6 +18,7 @@ export class MapToolbarComponent implements OnInit {
                private circlesEditor: CirclesEditorService,
                private ellipsesEditor: EllipsesEditorService,
                private polygonsEditor: PolygonsEditorService,
+               private polylineEditor: PolylinesEditorService,
   ) {
 
   }
@@ -35,5 +36,8 @@ export class MapToolbarComponent implements OnInit {
 
   drawPolygon() {
     this.polygonsEditor.create();
+  }
+  drawPolyline() {
+    this.polylineEditor.create();
   }
 }

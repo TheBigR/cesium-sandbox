@@ -11,7 +11,12 @@
                      [iconUrl]="'assets/polygon.svg'"
                      (onClick)="drawPolygon()">
   </ac-toolbar-button>
+  <ac-toolbar-button matTooltip="Draw Polygon" matTooltipPosition="right"
+                     [iconUrl]="'assets/Polyline.png'"
+                     (onClick)="drawPolyline()">
+  </ac-toolbar-button>
   <circles-editor></circles-editor>
   <ellipses-editor></ellipses-editor>
   <polygons-editor></polygons-editor>
+  <polylines-editor></polylines-editor>
 </ac-toolbar>
